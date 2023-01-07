@@ -17,7 +17,7 @@
       }
       .greenbox {
         background-color: #31af37;
-        height: 100px;
+        height: auto;
         width: auto;
       }
       #great {
@@ -28,6 +28,12 @@
   </head>
 
   <body>
+    <button id="changeFacebook">Change facebook text</button>
+    <button id="changeApple">Change Apple html</button>
+    <button id="changeInput">Change Input value</button>
+    <button id="changeMicrosoft">Change Microsoft</button>
+    <button id="addText">Add Text</button>
+
     <div class="bluebox" id="facebook">
       <p>Facebook is <span id="great">great</span></p>
     </div>
@@ -35,7 +41,7 @@
       <p>Apple.</p>
     </div>
     <div class="greenbox" id="microsoft">
-      <p>Microsoft.</p>
+      <p id="microsoftParagraph">Microsoft.</p>
       <p>
         <a href="http://www.microsoft.com" title="microsoft" id="microsoftLink"
           >Microsoft Link</a
@@ -43,10 +49,7 @@
       </p>
     </div>
     <p>Enter your name:<input /></p>
-    <button id="changeFacebook">Change facebook text</button>
-    <button id="changeApple">Change Apple html</button>
-    <button id="changeInput">Change Input value</button>
-    <button id="changeMicrosoft">Change Microsoft</button>
+    
     <script>
       $(function () {
         $("#changeFacebook").click(function () {
@@ -66,6 +69,17 @@
             href: "http://www.google.com",
             title: "Google",
           });
+        });
+
+        $("#addText").click(function () {
+        //   $("#microsoft").append(
+        //     "<ul><li>BMW</li><li>Audi</li><li>Mercedes</li></ul>"
+        //   );
+        //   $("#microsoft").prepend(
+        //     "<ul><li>BMW</li><li>Audi</li><li>Mercedes</li></ul>"
+        //   );
+
+            $('#microsoftParagraph').after('<p>New Paragraph</p>');
         });
       });
     </script>
