@@ -7,17 +7,17 @@
       .bluebox {
         background-color: #3a5795;
         color: white;
-        height: 100px;
+        height: auto;
         width: auto;
       }
       .yellowbox {
         background-color: #dee055;
-        height: 100px;
+        height: auto;
         width: auto;
       }
       .greenbox {
         background-color: #31af37;
-        height: 100px;
+        height: auto;
         width: auto;
       }
       #great {
@@ -35,12 +35,60 @@
     </div>
     <div class="yellowbox">
       <p>Apple.</p>
-      <p><a>This is a link</a></p>
-      <p><a>This is another link</a></p>
+      <ul>
+        <li>BMW</li>
+        <li>Audi</li>
+        <li>Mercedes</li>
+      </ul>
+      <p><a href="http://www.google.com">This is a link</a></p>
+      <p><a href="http://www.microsoft.com">This is another link</a></p>
     </div>
     <p>Paragraph</p>
     <div class="greenbox">
       <p>Microsoft.</p>
+      <ul>
+        <li>BMW</li>
+        <li>Audi</li>
+        <li>Mercedes</li>
+      </ul>
+      <table>
+        <tr>
+          <th>Phone Make</th>
+          <th>Model</th>
+          <th>Model</th>
+        </tr>
+
+        <tr>
+          <td>Apple</td>
+          <td>Iphone 4</td>
+          <td>16Go</td>
+        </tr>
+
+        <tr>
+          <td>Apple</td>
+          <td>Iphone 4</td>
+          <td>16Go</td>
+        </tr>
+
+        <tr>
+          <td>Apple</td>
+          <td>Iphone 4</td>
+          <td>16Go</td>
+        </tr>
+
+        <tr>
+          <td>Apple</td>
+          <td>Iphone 4</td>
+          <td>16Go</td>
+        </tr>
+
+        <tr>
+          <td>Apple</td>
+          <td>Iphone 4</td>
+          <td>16Go</td>
+        </tr>        
+      </table>
+      <p>Type your name: <input /><button type="submit">Submit</button></p>
     </div>
     <script>
       $(function () {
@@ -59,6 +107,18 @@
         // $('p:first-child').css('text-decoration', 'underline');
         // $('p:last-child').css('text-decoration', 'underline');
         $("p:first-child, p:last-child").css("text-decoration", "underline");
+
+        $("[href]").css("color", "red");
+
+        $("li:first-child, li:last-child").css("background-color", "#bbf362");
+
+        $("tr:even").css("background-color", "#e1d446");
+        $("tr:odd").css("background-color", "#811c90");
+
+        $(":input").css("background-color", "#1da492");
+        $(":submit").css("background-color", "#7979eb");
+
+        $('div:has(table)').css('background-color', 'rgba(107, 180, 198, 0.697)');
       });
     </script>
   </body>
