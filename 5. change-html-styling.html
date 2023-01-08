@@ -34,6 +34,10 @@
   <body>
     <button id="changeFacebook">Change Facebook</button>
     <button id="changeApple">Change Apple</button>
+    <button id="changeMicrosoft">Change Microsoft</button>
+    <button id="showMicrosoft">Show Microsoft</button>
+    <button id="changeGreat">Change Great</button>
+
     <div class="bluebox" id="facebook">
       <p>Facebook is <span id="great">great</span></p>
     </div>
@@ -62,8 +66,37 @@
           //   window.alert($('#facebook').outerHeight());
         });
 
-        $("#changeApple").click(function () {
+        $("#apple").click(function () {
           $("#apple").removeClass("sans-serif");
+          $("#apple").css("position", "absolute");
+          $("#apple").css({
+            top: 200 * Math.random(),
+            left: 200 * Math.random(),
+            backgroundColor:
+              "rgb(" +
+              Math.floor(256 * Math.random()) +
+              "," +
+              Math.floor(256 * Math.random()) +
+              "," +
+              Math.floor(256 * Math.random()) +
+              ")",
+          });
+        });
+
+        $("#changeMicrosoft").click(function () {
+          $("#microsoft").toggleClass("greenbox");
+        });
+
+        $("#microsoft").dblclick(function () {
+          $(this).hide();
+        });
+
+        $("#showMicrosoft").click(function () {
+          $("#microsoft").show();
+        });
+
+        $("#changeGreat").click(function () {
+          $("#great").wrap('<div></div>');
         });
       });
     </script>
