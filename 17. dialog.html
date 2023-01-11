@@ -34,7 +34,7 @@
 
   <body>
     <div class="bluebox ui-corner-all" id="facebook">
-      <p>Facebook.</p>      
+      <p>Facebook.</p>
     </div>
     <div class="yellowbox ui-corner-all" id="apple">
       <p>Apple.</p>
@@ -43,19 +43,41 @@
       <p>Microsoft.</p>
     </div>
     <div id="myDialog" title="This is a dialog">
-        <p>Welcome to our page.</p>
+      <p>Welcome to our page.</p>
+    </div>
+    <div id="confirmation" title="Leave the page?">
+      <p>
+        <span class="ui-icon ui-icon-alert" style="float: left"></span>You will
+        lose all unsaved work. Are you sure?
+      </p>
     </div>
     <button id="open">Open Dialog</button>
+    <button id="goToPreviousPage">Go to previous page</button>
     <script>
-        $(function() {
-          $('#myDialog').dialog({
-              autoOpen: false
-          });
-          $('#open').click(function() {
-              $('#myDialog').dialog('open');
-          });
-          $('button').button();  
+      $(function () {
+        $("#myDialog").dialog({
+          autoOpen: false,
         });
+        $("#open").click(function () {
+          $("#myDialog").dialog("open");
+        });
+        $("button").button();
+        $("#confirmation").dialog({
+          autoOpen: false,
+          modal: true,
+          buttons: {
+            "Go to previous page": function () {
+              window.history.back(); // not worked in this version
+            },
+            Cancel: function () {
+              $(this).dialog("close");
+            },
+          },
+        });
+        $("#goToPreviousPage").click(function () {
+          $("#confirmation").dialog("open");
+        });
+      });
     </script>
   </body>
 </html>
